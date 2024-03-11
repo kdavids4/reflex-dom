@@ -120,7 +120,7 @@ module Reflex.Dom.Builder.Immediate
 import Control.Concurrent
 import Control.Exception (bracketOnError)
 import Control.Lens (Identity(..), imapM_, iforM_, (^.), makeLenses)
-import Control.Monad (forM_, forM, when)
+import Control.Monad (forM_, forM, when, void)
 import Control.Monad.Exception
 import Control.Monad.Fix
 import Control.Monad.Primitive
