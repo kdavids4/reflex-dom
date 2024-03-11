@@ -308,7 +308,7 @@ inputElementConfig_elementConfig f (InputElementConfig a b c d e) = (\e' -> Inpu
 {-# INLINE inputElementConfig_elementConfig #-}
 #endif
 
-instance (Reflex t, er ~ EventResult, DomSpace s) => Default (InputElementConfig er t s) where
+instance (Reflex t, er ~ EventResult, DomSpace s, Default (ElementConfig EventResult t s)) => Default (InputElementConfig er t s) where
   {-# INLINABLE def #-}
   def = InputElementConfig
     { _inputElementConfig_initialValue = ""
@@ -348,7 +348,7 @@ textAreaElementConfig_elementConfig f (TextAreaElementConfig a b c) = (\c' -> Te
 {-# INLINE textAreaElementConfig_elementConfig #-}
 #endif
 
-instance (Reflex t, er ~ EventResult, DomSpace s) => Default (TextAreaElementConfig er t s) where
+instance (Reflex t, er ~ EventResult, DomSpace s, Default (ElementConfig EventResult t s)) => Default (TextAreaElementConfig er t s) where
   {-# INLINABLE def #-}
   def = TextAreaElementConfig
     { _textAreaElementConfig_initialValue = ""
@@ -410,7 +410,7 @@ selectElementConfig_elementConfig f (SelectElementConfig a b c) = (\c' -> Select
 {-# INLINE selectElementConfig_elementConfig #-}
 #endif
 
-instance (Reflex t, er ~ EventResult, DomSpace s) => Default (SelectElementConfig er t s) where
+instance (Reflex t, er ~ EventResult, DomSpace s, Default (ElementConfig EventResult t s)) => Default (SelectElementConfig er t s) where
   def = SelectElementConfig
     { _selectElementConfig_initialValue = ""
     , _selectElementConfig_setValue = Nothing
